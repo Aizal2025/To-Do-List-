@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO-LIST</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>TO-DO-LIST<br>WEB-APP</h1>
+        <p class="subtitle">Task Organiser</p>
+        <div class="tabs">
+            <span>TOTAL:<b id="totalCount">0</b></span>
+            <span>PENDING:<b id="totalPending">0</b></span>
+            <span>COMPLETE:<b id="totalCompleted">0</b></span>
+        </div>
+        <div class="input-area">
+            <input type="text" id="taskInput" placeholder="What do you need to do?" maxlength="100">
+            <button id="addBtn">+</button>
+        </div>
+
+        <p class="error-msg" id="errorMsg">Please enter a task before adding</p>
+        <div class="filter-tabs">
+            <button class="activeBtn active" data-filter="all">All</button>
+            <button class="activeBtn" data-filter="pending">Pending</button>
+            <button class="activeBtn" data-filter="completed">Completed</button>
+        </div>
+        <ul id="taskList"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
