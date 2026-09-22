@@ -1,10 +1,9 @@
 // TO DO LIST APP
-// simple project - task add, edit, delete, complete karne ke liye
 
 var tasks = [];
 var currentFilter = "all";
 
-// pehle localStorage se purana data load kar lo
+// localStorage se purana data load 
 var savedData = localStorage.getItem('tasks');
 if (savedData != null) {
   tasks = JSON.parse(savedData);
@@ -15,12 +14,12 @@ var addBtn = document.getElementById('addBtn');
 var taskList = document.getElementById('taskList');
 var errorMsg = document.getElementById('errorMsg');
 
-// function jo tasks ko localStorage me save karega
+// function store task in localstorage
 function saveTasks() {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-// upar wale counters (total, pending, complete) update karne ke liye
+// (total, pending, complete) update karne ke liye
 function updateStats() {
   var total = tasks.length;
   var pending = 0;
@@ -39,14 +38,14 @@ function updateStats() {
   document.getElementById('totalCompleted').innerHTML = completed;
 }
 
-// text ko safe karne ke liye taaki koi html tag issue na kare
+// text ko safety
 function escapeHtml(text) {
   var div = document.createElement('div');
   div.innerText = text;
   return div.innerHTML;
 }
 
-// sara list dobara draw karne ke liye
+// re-listing
 function renderTasks() {
   taskList.innerHTML = "";
 
@@ -99,7 +98,7 @@ function renderTasks() {
   updateStats();
 }
 
-// naya task add karne ka function
+// new task adding 
 function addTask() {
   var text = taskInput.value.trim();
 
@@ -122,7 +121,7 @@ function addTask() {
   renderTasks();
 }
 
-// checkbox click hone par task complete/pending karna
+// checkbox click 
 function toggleTask(id) {
   for (var i = 0; i < tasks.length; i++) {
     if (tasks[i].id == id) {
@@ -133,7 +132,7 @@ function toggleTask(id) {
   renderTasks();
 }
 
-// task delete karne ka function
+// delete task
 function deleteTask(id) {
   var newTasks = [];
   for (var i = 0; i < tasks.length; i++) {
@@ -146,7 +145,7 @@ function deleteTask(id) {
   renderTasks();
 }
 
-// task edit karne ka function - prompt box use kar rahe hai simple tarike se
+// edit task
 function editTask(id) {
   var task = null;
   for (var i = 0; i < tasks.length; i++) {
@@ -169,19 +168,19 @@ addBtn.addEventListener('click', function() {
   addTask();
 });
 
-// enter key se bhi add ho jaye
+// enter key eding
 taskInput.addEventListener('keypress', function(e) {
   if (e.key == "Enter") {
     addTask();
   }
 });
 
-// typing shuru karte hi error hata do
+// remove error
 taskInput.addEventListener('input', function() {
   errorMsg.style.display = "none";
 });
 
-// filter buttons ka kaam
+// filter buttons 
 var filterBtns = document.querySelectorAll('.activeBtn');
 
 for (var k = 0; k < filterBtns.length; k++) {
@@ -197,5 +196,5 @@ for (var k = 0; k < filterBtns.length; k++) {
   });
 }
 
-// page load hote hi list dikha do
+// reload and show again
 renderTasks();
