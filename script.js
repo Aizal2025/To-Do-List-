@@ -1,4 +1,4 @@
-// TO DO LIST APP
+
 
 var tasks = [];
 var currentFilter = "all";
@@ -195,6 +195,17 @@ for (var k = 0; k < filterBtns.length; k++) {
     renderTasks();
   });
 }
+
+// front page: Get Started button click -> to-do app open
+var startBtn = document.getElementById('startBtn');
+var frontPage = document.getElementById('frontPage');
+var appPage = document.getElementById('appPage');
+
+startBtn.addEventListener('click', function() {
+  frontPage.classList.add('hidden');
+  appPage.classList.remove('hidden');
+  taskInput.focus();
+});
 
 // reload and show again
 renderTasks();
