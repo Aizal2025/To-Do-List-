@@ -8,6 +8,28 @@
 </head>
 <body>
 
+    <!-- FRONT PAGE -->
+    <section class="front-page" id="frontPage">
+        <div class="front-content">
+            <div class="front-image">
+                <div class="card">
+                    <div class="card-row"><span class="dot done">✔</span><span class="line"></span></div>
+                    <div class="card-row"><span class="dot done">✔</span><span class="line short"></span></div>
+                    <div class="card-row"><span class="dot"></span><span class="line light"></span></div>
+                </div>
+            </div>
+            <h1 class="front-title">TO-DO-LIST<br>WEB-APP</h1>
+            <p class="front-text">Plan your day, crush your tasks and stay locked in. Simple, fast and stress-free productivity.</p>
+            <button id="startBtn" class="start-btn">Get Started &rarr;</button>
+        </div>
+
+        <footer class="footer">
+            <p>Made by Ziya Khan | &copy; 2026 All Rights Reserved</p>
+        </footer>
+    </section>
+
+    <!-- TO DO APP -->
+    <div class="app-page hidden" id="appPage">
     <div class="container">
         <h1>TO-DO-LIST<br>WEB-APP</h1>
         <p class="subtitle">Task Organiser</p>
@@ -28,6 +50,7 @@
             <button class="activeBtn" data-filter="completed">Completed</button>
         </div>
         <ul id="taskList"></ul>
+    </div>
     </div>
     <script src="script.js"></script>
 </body>
